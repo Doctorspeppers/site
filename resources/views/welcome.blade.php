@@ -40,21 +40,24 @@
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-8">
 
 
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-black/5 rounded-lg shadow-2xl shadow-gray-800 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 grid grid-flow-row auto-rows-max">
-                            <div class="">
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
+                        <div class="w-4/5 justify-center mx-auto p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-black/5 rounded-lg shadow-2xl shadow-gray-800 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 grid grid-flow-row auto-rows-max">
+                            <div class="grid p-6 grid-cols-6 gap-4">
+                                <div class="h-16 w-16 col-start-1 col-span-1 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
                                         <img src = "./images/chili-pepper-svgrepo-com.svg" class="w-7 h-7 stroke-red-500 " alt="Pepper"/>
                                 </div>
-                                <img src = "./images/eu.jpg" class="w-60 mr-20 float-right h-auto stroke-red-500 " alt="Pepper"/>
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Pedro Antonio Dos Santos</h2>
+                                <div class=' col-start-1 col-span-5'>
+                                    <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Pedro Antonio Dos Santos</h2>
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-md max-w-7xl leading-relaxed">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit id vel iure fuga consectetur esse distinctio dolores, modi dolorum perferendis enim ab aliquam, aspernatur accusamus quia debitis fugiat perspiciatis iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam delectus voluptas ipsum, laudantium sequi atque eveniet labore. Similique ipsum reprehenderit tempore, corporis amet qui optio, non in nobis, ut repellat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia asperiores fugit corporis. Necessitatibus, dolores repellat maxime repellendus dolorem, provident deleniti ipsum, fugit esse laboriosam minima. Temporibus consectetur aliquid tempora asperiores?
-                                </p>
+                                    <p class="mt-4  align-text-top text-gray-500 dark:text-gray-400 text-md">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit id vel iure fuga consectetur esse distinctio dolores, modi dolorum perferendis enim ab aliquam, aspernatur accusamus quia debitis fugiat perspiciatis iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam delectus voluptas ipsum, laudantium sequi atque eveniet labore. Similique ipsum reprehenderit tempore, corporis amet qui optio, non in nobis, ut repellat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia asperiores fugit corporis. Necessitatibus, dolores repellat maxime repellendus dolorem, provident deleniti ipsum, fugit esse laboriosam minima. Temporibus consectetur aliquid tempora asperiores?
+                                    </p>
+                                </div>
+                                <img src = "./images/eu.jpg" class=" align-text-top sm:flex sm:justify-center w-80 sm:mr-10 md:mr-10 h-auto stroke-red-500 " alt="Pepper"/>
+
                             </div>
-                            <div class="">
+                            <div class="p-6">
 
-                                        <h2 class="mt-6 text-xl  flex justify-center font-semibold text-gray-900 dark:text-white">Pedro Antonio Dos Santos</h2>
+                                        <h2 class="mt-6 text-xl mb-6 flex justify-center font-semibold text-gray-900 dark:text-white">Alguns projetos</h2>
 
                                         <div id="default-carousel" class="relative w-full" data-carousel="slide">
                                             <!-- Carousel wrapper -->
