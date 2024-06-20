@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Curriculo;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -21,6 +21,6 @@ class Resumo extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.curriculo.resumo');
+        return view('components.curriculo.item');
     }
 }

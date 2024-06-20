@@ -25,8 +25,7 @@
                             </h2>
 
                             <div class="">
-                                <h5 class="text-slate-900 font-semibold mb-4 text-sm leading-6 dark:text-slate-100">On this page</h5>
-                                <ul class="text-slate-700 text-sm leading-6">
+                                <ul class="text-sky-700 text-sm leading-6">
                                     <li>
                                         <a href="#self-hosted" class="block py-1 font-medium font-medium text-sky-500 dark:text-sky-400">
                                             Self Hosted
@@ -34,18 +33,18 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#home-page"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Home page
                                         </a>
                                     </li>
                                     <li class="ml-4">
-                                        <a href="#composer-files" class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                        <a href="#composer-files" class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Composer files
@@ -53,9 +52,9 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#nextcloud"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Nextcloud
@@ -63,9 +62,9 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#midia-stack"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Midia Stack
@@ -74,9 +73,9 @@
 
                                     <li class="ml-4">
                                         <a href="#chef"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Chef cyber swiss knives
@@ -89,9 +88,9 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#tag-hunter"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Tag hunter
@@ -99,9 +98,9 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#system-manager"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>System Manager (EC2)
@@ -109,9 +108,9 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#dumper"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Dumper
@@ -125,17 +124,17 @@
                                     </li>
                                     <li class="ml-4">
                                         <a href="#pepper-org"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Pepper Org
                                         </a>
                                         <a href="#post-generator"
-                                            class="group flex items-start py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                            class="group flex items-start py-1 hover:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300">
                                             <svg width="3" height="24" viewBox="0 -9 3 24"
-                                                class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500">
+                                                class="mr-2 text-sky-400 overflow-visible group-hover:text-sky-600 dark:text-sky-600 dark:group-hover:text-sky-500">
                                                 <path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
                                                 </path>
                                             </svg>Post generator
