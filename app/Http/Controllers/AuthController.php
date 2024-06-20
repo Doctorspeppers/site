@@ -29,25 +29,7 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                ->withSuccess('Signed in');
-        }
-    }
-
-    public function create(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-
-        $data = $request->all();
-        $check = User::create($data);
-        if ($check) {
-            return redirect("login")->withSuccess('You have signed-in');
-        } else {
-            return back()->withError('You have not signed-in');
+            return response()->json(['intended' => route('dashboard')], 200);
         }
     }
 
@@ -55,6 +37,6 @@ class AuthController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return Redirect('login');
+        return Redirect(route('login-user'));
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurriculumController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,15 +16,17 @@ Route::get('/projetos', function () {
 })->name('projetos');
 
 
-Route::get('dashboard', [UserController::class, 'dashboard']);
+Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+
 Route::get('user/login', [AuthController::class, 'login'])->name('login-user');
 Route::post('user/login', [AuthController::class, 'signin'])->name('login');
 Route::get('user/register', [AuthController::class, 'register'])->name('register');
-Route::post('user/register', [AuthController::class, 'create'])->name('create');
-Route::post('user/delete', [AuthController::class, 'delete'])->name('delete');
 Route::get('user/signout', [AuthController::class, 'signOut'])->name('signout');
 
-
+Route::post('user/edit', [UserController::class, 'store'])->name('edit');
+Route::post('user/register', [UserController::class, 'create'])->name('create');
+Route::post('user/delete', [UserController::class, 'delete'])->name('delete');
 // Curriculum
 Route::get('curriculum', [CurriculumController::class, 'index'])->name('curriculums.index');
 Route::get('curriculum/{curriculum}', [CurriculumController::class, 'show'])->name('curriculums.show');

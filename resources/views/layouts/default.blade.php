@@ -8,7 +8,6 @@
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     @include('includes.header')
                     <main class="mt-6">
-
                         @yield('content')
                     </main>
 
