@@ -5,7 +5,7 @@ class Skills
 {
     public $skills;
 
-    public $skillsAvaible = [
+    static public $skillsAvaible = [
         "ableton",
         "activitypub",
         "actix",
@@ -258,6 +258,10 @@ class Skills
             throw new \Exception('Skill not available');
         }
         $this->skills[] = $skill;
+    }
+
+    static public function all(){
+        return self::$skillsAvaible;
     }
 
     public function __toString()

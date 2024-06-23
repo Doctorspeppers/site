@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCurriCulumRequest;
+use App\Models\Curriculum;
 use Illuminate\Http\Request;
 
 class CurriculumController extends Controller
 {
     public function index(Request $request)
     {
-        return view('curriculum');
+        return view('curriculum.index');
     }
 
-    public function edit(Request $request, Curriculum $curriculum){
+    public function edit(Request $request, Curriculum|null $curriculum = null)
+    {
         return view('curriculum.edit');
     }
 
-    public function store(StoreCurriCulumRequest $request, Curriculum $curriculum){
+    public function store(StoreCurriCulumRequest $request, Curriculum $curriculum)
+    {
 
         if($curriculum->exists) {
             $curriculum->update($request->all());
@@ -28,14 +31,15 @@ class CurriculumController extends Controller
         return response()->json($curriculum, 200);
     }
 
-    public function delete(AlterCurriculumEntity $request, Curriculum $curriculum){
-
+    public function delete(AlterCurriculumEntity $request, Curriculum $curriculum)
+    {
         $curriculum->delete();
         return response()->json([], 200);
     }
 
-    public function download(Request $request, Curriculum $curriculum){
+    public function download(Request $request, Curriculum $curriculum)
     {
         return ;
     }
+
 }

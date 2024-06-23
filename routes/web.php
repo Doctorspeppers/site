@@ -29,12 +29,11 @@ Route::post('user/register', [UserController::class, 'create'])->name('create');
 Route::post('user/delete', [UserController::class, 'delete'])->name('delete');
 // Curriculum
 Route::get('curriculum', [CurriculumController::class, 'index'])->name('curriculums.index');
-Route::get('curriculum/{curriculum}', [CurriculumController::class, 'show'])->name('curriculums.show');
-
-Route::get('curriculum/{curriculum}', [CurriculumController::class, 'edit'])->name('curriculums.edit');
-Route::post('curriculum/{curriculum}', [CurriculumController::class, 'store'])->name('curriculums.update');
-Route::post('curriculum', [CurriculumController::class, 'store'])->name('curriculums.store');
 Route::get('curriculum/new', [CurriculumController::class, 'edit'])->name('curriculums.new');
+Route::get('curriculum/edit/{curriculum}', [CurriculumController::class, 'edit'])->name('curriculums.edit');
+Route::get('curriculum/{curriculum}', [CurriculumController::class, 'show'])->name('curriculums.show');
+Route::post('curriculum/{curriculum}', [CurriculumController::class, 'store'])->name('curriculum.update');
+Route::post('curriculum', [CurriculumController::class, 'store'])->name('curriculums.store');
 
 Route::get('curriculum/{curriculum}/delete', [CurriculumController::class, 'delete'])->name('curriculums.delete');
 //

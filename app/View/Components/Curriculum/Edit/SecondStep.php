@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Curriculo;
+namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ItemResumo extends Component
+class SecondStep extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class ItemResumo extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.curriculo.item');
+        return view('components.second-step');
     }
 }

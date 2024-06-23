@@ -14,7 +14,7 @@ class UserController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard');
+        return view('dash   board');
     }
     public function edit()
     {

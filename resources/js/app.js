@@ -2,6 +2,9 @@ import './bootstrap';
 import Alpine from 'alpinejs'
 import Swal from 'sweetalert2'
 import '@sweetalert2/themes/dark';
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
+
 
 window.onload = function(e){
     document.getElementById('menu').classList.remove('hidden');
@@ -62,8 +65,14 @@ let formController =  {
                 browserUtils.emitModalError("Erro", error.response.data.message);
             })
         },
-    }
 
+
+}
+
+
+
+document.marked = marked
+document.DOMPurify = DOMPurify
 window.formController = formController
 window.Alpine = Alpine
 window.Swal = Swal
