@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlterCurriculumEntity;
 use App\Http\Requests\StoreCurriCulumRequest;
 use App\Models\Curriculum;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Michelf\Markdown;
 
 class CurriculumController extends Controller
 {
@@ -25,7 +27,7 @@ class CurriculumController extends Controller
 
     public function edit(Request $request, Curriculum|null $curriculum = null)
     {
-        return view('curriculum.edit');
+        return view('curriculum.edit', ['curriculum' => $curriculum]);
     }
 
     public function store(StoreCurriCulumRequest $request, Curriculum $curriculum)
@@ -33,7 +35,12 @@ class CurriculumController extends Controller
 
         if($curriculum->exists) {
             $curriculum->update($request->all());
-            return response()->json($curriculum, 200);
+            return response()->json(
+                [
+                    'message'=>'Curriculum criado com sucesso',
+                    'curriculum'=>$curriculum,
+                    'intended' => route('curriculums.index')
+                ], 200);
         }
         $curriculum = $curriculum->create($request->all());
 
@@ -41,7 +48,7 @@ class CurriculumController extends Controller
         return response()->json(
             [
                 'message'=>'Curriculum criado com sucesso',
-                'curriculum'=>$curriculum->toArray(),
+                'curriculum'=>$curriculum,
                 'intended' => route('curriculums.index')
             ], 200);
     }
@@ -49,7 +56,11 @@ class CurriculumController extends Controller
     public function delete(AlterCurriculumEntity $request, Curriculum $curriculum)
     {
         $curriculum->delete();
-        return response()->json([], 200);
+        if($request->ajax()){
+            return response()->json([], 200);
+        }
+
+        return back();
     }
 
     public function download(Request $request, Curriculum $curriculum)

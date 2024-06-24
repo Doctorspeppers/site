@@ -3,7 +3,7 @@
                     <label  for="{{ $input }}" class="block mb-2 text-md font-medium ">{{ $label }}</label>
                     <div class="m-5 hidden markdown-body" id="{{ $preview }}">
                     </div>
-                    <textarea name="{{ $input }}" type="text" id="{{ $input }}" class="block w-full p-4 !text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-red-500 dark:focus:border-red-500"> </textarea>
+                    <textarea name="{{ $input }}" type="text" id="{{ $input }}" class="block w-full p-4 !text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-red-500 dark:focus:border-red-500"> {{ $slot }} </textarea>
 </div>
 
 

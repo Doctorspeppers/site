@@ -8,12 +8,11 @@ use Illuminate\View\Component;
 
 class FirstStep extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $curriculum;
+
+    public function __construct($curriculum)
     {
-        //
+        $this->curriculum = $curriculum;
     }
 
     /**

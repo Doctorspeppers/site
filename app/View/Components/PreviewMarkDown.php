@@ -12,11 +12,14 @@ class PreviewMarkDown extends Component
     public $input;
     public $preview;
 
-    public function __construct($label, $input, $preview)
+    public $value;
+
+    public function __construct($label, $input, $preview, $value = '')
     {
         $this->label = $label;
         $this->input = $input;
         $this->preview = $preview;
+        $this->value = $value;
     }
 
     /**
