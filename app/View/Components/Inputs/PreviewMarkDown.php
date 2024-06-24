@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Inputs;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -27,6 +27,6 @@ class PreviewMarkDown extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.preview-mark-down');
+        return view('components.inputs.preview-mark-down');
     }
 }

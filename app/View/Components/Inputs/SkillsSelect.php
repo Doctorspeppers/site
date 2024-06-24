@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Curriculum\Fields;
+namespace App\View\Components\Inputs;
 
 use App\Support\Skills;
 use App\View\Components\Inputs\MultipleSelect;

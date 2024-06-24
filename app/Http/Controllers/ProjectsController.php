@@ -22,7 +22,7 @@ class ProjectsController extends Controller
 
     public function edit(Request $request, Project|null $project = null)
     {
-        return view('project.edit');
+        return view('project.edit', ['project' => $project]);
     }
 
     public function store(StoreProjectRequest $request, Project|null $project = null)

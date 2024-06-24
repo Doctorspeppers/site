@@ -63,6 +63,11 @@ class CurriculumController extends Controller
         return back();
     }
 
+    public function projects(Request $request, Curriculum $curriculum)
+    {
+        return view('project.index', ['projects' => $curriculum->topics()->with('projects')->paginate(15)]);
+    }
+
     public function download(Request $request, Curriculum $curriculum)
     {
         return ;
