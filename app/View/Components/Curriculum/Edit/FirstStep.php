@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Curriculum;
+namespace App\View\Components\Curriculum\Edit;
 
 use Closure;
 use Illuminate\Contracts\View\View;

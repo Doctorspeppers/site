@@ -13,17 +13,17 @@ class Curriculum extends Model
 {
     use HasFactory;
 
+    public $table = 'curriculums';
+
     protected $fillable = [
         'subtitle',
         'resume',
         'skills',
-        'links',
     ];
 
     protected function casts(): array
     {
         return [
-            'skills' => Skills::class,
             'links' => Links::class,
         ];
     }
@@ -41,5 +41,19 @@ class Curriculum extends Model
     public function projects(): HasMany
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function create(array $attributes = [])
+    {
+        $model = $this->fill($attributes);
+        if(isset($attributes['user_id'])){
+            $model->user_id = $attributes['user_id'];
+
+            return $model;
+        }
+
+        $model->user_id = auth()->user()->id;
+
+        return $model;
     }
 }

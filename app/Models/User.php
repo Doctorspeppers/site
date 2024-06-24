@@ -49,9 +49,15 @@ class User extends Authenticatable
         ];
     }
 
+    public function curriculums(){
+        return $this->hasMany(Curriculum::class);
+    }
+
     static public function create(array $attributes = []){
         $attributes['password'] = Hash::make($attributes['password']);
         $model = static::query()->create($attributes);
         return $model;
     }
+
+
 }

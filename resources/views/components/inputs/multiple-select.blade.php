@@ -64,12 +64,12 @@
                 </div>
                 <div class="w-full max-h-60 flex flex-row ">
                     <div x-show.transition.origin.top="isOpen()"
-                        class=" max-h-screen overflow-y-auto shadow top-100 bg-red-600 z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj"
+                        class=" max-h-screen overflow-y-auto shadow top-100 bg-grey-400 z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj"
                         x-on:click.away="close">
                         <div class="max-h-screen overflow-y-auto w-full">
                             <template x-for="(option,index) in options" :key="option">
                                 <div>
-                                    <div class="cursor-pointer w-full border-gray-100 rounded-t border-b hover:bg-red-100"
+                                    <div class="cursor-pointer w-full border-gray-100 rounded-t border-b hover:bg-red-600"
                                         @click="select(index,$event)">
                                         <div x-bind:class="option.selected ? 'border-red-600' : ''"
                                             class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative">

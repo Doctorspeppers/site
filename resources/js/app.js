@@ -25,7 +25,7 @@ window.browserUtils = {
         });
         Toast.fire({
             icon: "success",
-            title: response.data.message
+            title: message
         });
     },
     emitModalError: function(title,message) {
@@ -39,7 +39,7 @@ window.browserUtils = {
 }
 
 let formController =  {
-        submitForm(event) {
+        async submitForm(event, callback = null) {
             var formData = new FormData(event.target);
 
             axios.request({
@@ -52,12 +52,16 @@ let formController =  {
                 }
             }).then(response => {
                 if(response.status < 300){
-                    if(response.data.intended){
-                        window.location.href = response.data.intended;
-                    }
                     if(response.data.message){
                         browserUtils.emit(response.data.message);
-                        return response.data;
+                    }
+                    if(callback){
+                        callback(response.data);
+                        return;
+                    }
+
+                    if(response.data.intended){
+                        setInterval(function(){ window.location.href = response.data.intended; }, 2000);
                     }
                 }
 

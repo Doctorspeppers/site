@@ -13,8 +13,9 @@ class SkillsSelect extends MultipleSelect
     /**
      * Create a new component instance.
      */
-    public function __construct($selected = [])
+    public function __construct($name = 'skills', $selected = [])
     {
+        $this->name = $name;
         $this->options = array_combine(Skills::all(), Skills::all());
         $this->selected = $selected ?? [];
     }

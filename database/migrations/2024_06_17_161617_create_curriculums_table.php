@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('curriculums', function (Blueprint $table) {
             $table->id();
+
             $table->unsignedBigInteger('user_id');
             $table->text('subtitle');
             $table->text('resume');
             $table->text('skills');
-            $table->json('links');
+            $table->boolean('is_published')->default(false);
 
             $table->timestamps();
 

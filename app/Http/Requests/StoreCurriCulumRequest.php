@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use App\Models\Curriculum;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class StoreCurriCulumRequest extends FormRequest
 {
@@ -29,8 +31,8 @@ class StoreCurriCulumRequest extends FormRequest
         return [
             'subtitle' => 'required',
             'resume' => 'required',
-            'skills' => 'required|json',
-            'links' => 'required|json'
+            'skills' => 'required',
+            'user_id' => Rule::prohibitedIf(!Auth::user()->is_admin)
         ];
     }
 }
