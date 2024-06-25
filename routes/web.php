@@ -42,7 +42,9 @@ Route::get('curriculum/{curriculum}/delete', [CurriculumController::class, 'dele
 // Projects
 Route::get('projects', [ProjectsController::class, 'index'])->name('projects.index');
 Route::get('projects/new', [ProjectsController::class, 'edit'])->name('projects.new');
-Route::get('projects/{project}', [ProjectsController::class, 'show'])->name('projects.show');
+Route::get('{user:nick}/projects', [ProjectsController::class, 'show'])->name('projects.show');
+Route::get('projects/{project}', [ProjectsController::class, 'show'])->name('projects.attach');
+
 Route::post('projects', [ProjectsController::class, 'store'])->name('projects.store');
 Route::get('projects/{project}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
 Route::post('projects/{project}', [ProjectsController::class, 'store'])->name('projects.update');

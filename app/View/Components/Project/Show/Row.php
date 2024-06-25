@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Project;
+namespace App\View\Components\Project\Show;
 
 use App\Models\Project;
 use Closure;
@@ -30,6 +30,6 @@ class Row extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.project.row');
+        return view('components.project.show.row');
     }
 }

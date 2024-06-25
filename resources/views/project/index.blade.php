@@ -17,8 +17,10 @@
                         <div class="pt-3  sm:pt-5 lg:pt-0">
                             <h1 class=" text-2xl font-semibold text-center text-black dark:text-white mb-5">Projetos</h1>
                             <div class="w-full">
+                                <a href='{{ route('projects.show', ['user'=>auth()->user()]) }}' class="text-center w-1/6 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Preview</a>
+
                                 <button class="w-1/6  text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Admin/User </button>
-                                <a href='{{ route('projects.new') }}' class="text-center w-1/6 float-right text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Add </a>
+                                <a href='{{ route('projects.new') }}' class="text-center w-1/8 float-right text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">+</a>
                             </div>
 
                             <div class="">
@@ -39,7 +41,7 @@
                                 </div>
 
                                 @foreach ($projects as $project)
-                                    <x-project.row :project="$project" />
+                                    <x-project.index.row :project="$project" />
                                 @endforeach
                                 <div class="mt-5">
                                     {{ $projects->links() }}

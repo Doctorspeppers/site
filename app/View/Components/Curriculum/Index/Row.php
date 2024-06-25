@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Curriculum;
+namespace App\View\Components\Curriculum\Index;
 
 use Closure;
 use App\Models\Curriculum;
@@ -29,6 +29,6 @@ class Row extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.curriculum.row');
+        return view('components.curriculum.index.row');
     }
 }

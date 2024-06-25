@@ -8,6 +8,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Models\Curriculum;
 use App\Models\Project;
 use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
@@ -20,9 +21,9 @@ class ProjectsController extends Controller
         return view('project.index',['projects' => auth()->user()->projects()->paginate(15)]);
     }
 
-    public function show(Request $request, Project $project)
+    public function show(Request $request, User $user)
     {
-        return view('project.show');
+        return view('project.show', ['projects' => $user->projects]);
     }
 
     public function edit(Request $request, Project|null $project = null)

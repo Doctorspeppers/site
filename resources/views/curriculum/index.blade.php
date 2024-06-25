@@ -39,7 +39,7 @@
                                 </div>
 
                                 @foreach ($curriculums as $curriculum)
-                                    <x-curriculum.row :curriculum="$curriculum" />
+                                    <x-curriculum.index.row :curriculum="$curriculum" />
                                 @endforeach
                                 <div class="mt-5">
                                     {{ $curriculums->links() }}
