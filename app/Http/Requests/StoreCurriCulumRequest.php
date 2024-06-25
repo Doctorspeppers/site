@@ -30,7 +30,7 @@ class StoreCurriCulumRequest extends FormRequest
         return [
             'subtitle' => 'required',
             'resume' => 'required',
-            'skills' => 'required',
+            'skills' => '',
             'user_id' => Rule::prohibitedIf(!Auth::user()->is_admin)
         ];
     }

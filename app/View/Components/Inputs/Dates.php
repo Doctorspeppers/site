@@ -2,18 +2,22 @@
 
 namespace App\View\Components\Inputs;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class LinksSelect extends Component
+class Dates extends Component
 {
 
-    public $values;
+    public $name;
 
-    public function __construct($values)
+    public $dates;
+
+    public function __construct($name, $dates = [])
     {
-        $this->values = $values;
+        $this->name = $name;
+        $this->dates = $dates;
     }
 
     /**
@@ -21,6 +25,6 @@ class LinksSelect extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.inputs.links-select');
+        return view('components.inputs.dates');
     }
 }

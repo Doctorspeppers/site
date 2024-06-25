@@ -53,11 +53,13 @@ class User extends Authenticatable
         return $this->hasMany(Curriculum::class);
     }
 
+    public function projects(){
+        return $this->hasMany(Project::class, 'created_by');
+    }
+
     static public function create(array $attributes = []){
         $attributes['password'] = Hash::make($attributes['password']);
         $model = static::query()->create($attributes);
         return $model;
     }
-
-
 }

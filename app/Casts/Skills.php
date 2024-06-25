@@ -14,7 +14,7 @@ class Skills implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return implode(',',$value);
+        return $value;
     }
 
     /**
@@ -24,6 +24,6 @@ class Skills implements CastsAttributes
      */
     public function set(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return explode(',',$value);
+        return $value;
     }
 }

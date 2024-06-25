@@ -2,18 +2,20 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Curriculum;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreItemRequest extends FormRequest
+class AlterProjectEntity extends FormRequest
 {
-    protected $stopOnFirstFailure = true;
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return $this->route('curriculum')->user_id == auth()->user()->id || auth()->user()->is_admin;
+        if($this->route('project')) {
+            $project = $this->route('project');
+            return $project->created_by == auth()->user()->id || auth()->user()->is_admin;
+        }
+        return true;
     }
 
     /**
@@ -24,12 +26,7 @@ class StoreItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'logo' => 'required',
-            'text' => 'required',
-            'links' => 'array|required',
-            'skills' => '',
-            'dates' => 'array|required|required_array_keys:init,end,format',
+            //
         ];
     }
 }

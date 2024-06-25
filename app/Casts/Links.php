@@ -14,7 +14,7 @@ class Links implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return json_decode($value);
+        return Collect(json_decode($value, true))   ;
     }
 
     /**
@@ -24,6 +24,7 @@ class Links implements CastsAttributes
      */
     public function set(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return json_encode($value) ?: json_encode([]);
+        if(isset($value['labels']) && isset($value['links'])) return json_encode( array_combine($value['labels'], $value['links']));
+        return json_decode($value);
     }
 }

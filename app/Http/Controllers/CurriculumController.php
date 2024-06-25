@@ -37,7 +37,7 @@ class CurriculumController extends Controller
             $curriculum->update($request->all());
             return response()->json(
                 [
-                    'message'=>'Curriculum criado com sucesso',
+                    'message'=>'Curriculum alterado com sucesso',
                     'curriculum'=>$curriculum,
                     'intended' => route('curriculums.index')
                 ], 200);

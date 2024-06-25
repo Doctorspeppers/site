@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->text('subtitle');
-            $table->text('resume');
+            $table->longText('resume');
             $table->text('skills');
             $table->boolean('is_published')->default(false);
 

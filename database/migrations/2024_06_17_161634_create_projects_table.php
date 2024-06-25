@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('title');
             $table->json('dates');
-            $table->string('text');
+            $table->longText('text');
             $table->text('skills');
             $table->json('links');
             $table->timestamps();

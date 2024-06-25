@@ -15,7 +15,7 @@
                         </div>
 
                         <div class="pt-3  sm:pt-5 lg:pt-0">
-                            <h1 class=" text-2xl font-semibold text-center text-black dark:text-white mb-5">project</h1>
+                            <h1 class=" text-2xl font-semibold text-center text-black dark:text-white mb-5">Projetos</h1>
                             <div class="w-full">
                                 <button class="w-1/6  text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Admin/User </button>
                                 <a href='{{ route('projects.new') }}' class="text-center w-1/6 float-right text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Add </a>
@@ -30,7 +30,7 @@
                                         <h2>Skills</h2>
                                     </div>
                                     <div class="align-middle text-center text-xl font-semibold text-black dark:text-white">
-                                        <h2>Items</h2>
+                                        <h2>Links</h2>
                                     </div>
                                     <div class="align-middle text-center text-xl font-semibold text-black dark:text-white">
                                         <h2>Ações</h2>

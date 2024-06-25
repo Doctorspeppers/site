@@ -1,19 +1,18 @@
 <?php
 
-namespace App\View\Components\Inputs;
+namespace App\View\Components\Project\Edit;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class LinksSelect extends Component
+class FirstStep extends Component
 {
+    public $project;
 
-    public $values;
-
-    public function __construct($values)
+    public function __construct($project)
     {
-        $this->values = $values;
+        $this->project = $project;
     }
 
     /**
@@ -21,6 +20,6 @@ class LinksSelect extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.inputs.links-select');
+        return view('components.project.edit.first-step');
     }
 }

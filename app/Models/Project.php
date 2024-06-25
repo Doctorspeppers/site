@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\Dates;
 use App\Casts\Links;
 use App\Casts\Skills;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,9 +16,11 @@ class Project extends Model
 
     protected $fillable = [
         'title',
-        'date',
+        'dates',
         'links',
         'skills',
+        'text',
+        'created_by',
     ];
 
     protected function casts(): array
@@ -25,32 +28,34 @@ class Project extends Model
         return [
             'skills' => Skills::class,
             'links' => Links::class,
+            'dates' => Dates::class,
         ];
     }
 
     public static function create(array $attributes = [])
     {
-        $model = static::query()->create($attributes);
-        if($attributes['created_by']){
-            $model->created_by = $attributes['created_by'];
+        if(isset($attributes['created_by'])){
+            $model = static::query()->create($attributes);
 
             return $model;
         }
 
-
-        $model->created_by = auth()->user()->id;
-
+        $attributes['created_by'] = auth()->user()->id;
+        $model = static::query()->create($attributes);
 
         return $model;
     }
 
+    public function getformatedDatesAttribute(): string{
+        return (isset($this->dates['init']) ? $this->dates['init']->format($this->dates['format']) : '') . ' - ' . (isset($this->dates['end']) ? $this->dates['end']->format($this->dates['format']) : '');
+    }
 
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function topic (): BelongsTo
+    public function topic(): BelongsTo
     {
         return $this->belongsTo(Topic::class);
     }

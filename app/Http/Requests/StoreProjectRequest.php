@@ -13,9 +13,11 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        if($this->route('curriculum')) {
+            return $this->route('curriculum')->user_id == auth()->user()->id || auth()->user()->is_admin;
+        }
         if($this->route('project')) {
-            $project = Project::find($this->route('project'));
-            return $project->createdBy->id == auth()->user()->id || auth()->user()->is_admin;
+            return $this->route('project')->created_by == auth()->user()->id || auth()->user()->is_admin;
         }
         return true;
     }
@@ -31,9 +33,9 @@ class StoreProjectRequest extends FormRequest
             'topic_id' => 'optional',
             'title' => 'required',
             'text' => 'required',
-            'dates' => 'json|required|required_array_keys:init,end,format',
-            'skills' => 'json|required',
-            'links' => 'json|required',
+            'dates' => 'array|required|required_array_keys:init,end,format',
+            'skills' => '',
+            'links' => 'array|required_array_keys:labels,links|required',
         ];
     }
 }

@@ -42,13 +42,12 @@ Route::get('curriculum/{curriculum}/delete', [CurriculumController::class, 'dele
 // Projects
 Route::get('projects', [ProjectsController::class, 'index'])->name('projects.index');
 Route::get('projects/new', [ProjectsController::class, 'edit'])->name('projects.new');
-Route::get('projects/{project}/edit', [ProjectsController::class, 'show'])->name('projects.show');
-
+Route::get('projects/{project}', [ProjectsController::class, 'show'])->name('projects.show');
 Route::post('projects', [ProjectsController::class, 'store'])->name('projects.store');
-Route::get('projects/{project}', [ProjectsController::class, 'edit'])->name('projects.edit');
+Route::get('projects/{project}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
 Route::post('projects/{project}', [ProjectsController::class, 'store'])->name('projects.update');
 
-Route::get('curriculum/{curriculum}/projects/{project}/delete', [ProjectsController::class, 'delete'])->name('projects.delete');
+Route::get('projects/{project}/delete', [ProjectsController::class, 'delete'])->name('projects.delete');
 //
 // Topics
 Route::get('curriculum/{curriculum}/topics', [TopicController::class, 'index'])->name('topics');
