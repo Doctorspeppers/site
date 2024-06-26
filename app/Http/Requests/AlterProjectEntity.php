@@ -12,8 +12,7 @@ class AlterProjectEntity extends FormRequest
     public function authorize(): bool
     {
         if($this->route('project')) {
-            $project = $this->route('project');
-            return $project->created_by == auth()->user()->id || auth()->user()->is_admin;
+            return $this->route('project')->created_by == auth()->user()->id || auth()->user()->is_admin;
         }
         return true;
     }

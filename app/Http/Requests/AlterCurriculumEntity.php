@@ -13,7 +13,7 @@ class AlterCurriculumEntity extends FormRequest
     {
         if($this->route('curriculum')) {
             $curriculum = $this->route('curriculum');
-            return $curriculum->user_id == auth()->user()->id || auth()->user()->is_admin;
+            return $curriculum->created_by == auth()->user()->id || auth()->user()->is_admin;
         }
         return true;
     }

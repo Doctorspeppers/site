@@ -15,7 +15,7 @@ class StoreCurriCulumRequest extends FormRequest
     public function authorize(): bool
     {
         if($this->route('curriculum')) {
-            return $this->route('curriculum')->user_id == auth()->user()->id || auth()->user()->is_admin;
+            return $this->route('curriculum')->created_by == auth()->user()->id || auth()->user()->is_admin;
         }
         return true;
     }
@@ -31,7 +31,7 @@ class StoreCurriCulumRequest extends FormRequest
             'subtitle' => 'required',
             'resume' => 'required',
             'skills' => '',
-            'user_id' => Rule::prohibitedIf(!Auth::user()->is_admin)
+            'created_by' => Rule::prohibitedIf(!Auth::user()->is_admin)
         ];
     }
 }

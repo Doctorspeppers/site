@@ -12,6 +12,8 @@ class Row extends Component
 
     public $id;
     public $title;
+
+    public $text;
     public $skills;
     public $links;
     public $dates;
@@ -21,6 +23,7 @@ class Row extends Component
         $this->id = $project->id;
         $this->dates = $project->formatedDates;
         $this->title = $project->title;
+        $this->text = $project->markdownText;
         $this->skills = $project->skills;
         $this->links = $project->links;
     }

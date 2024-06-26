@@ -31,6 +31,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return response()->json(['intended' => route('dashboard')], 200);
         }
+        return response()->json(['message' => 'Invalid credentials'], 401);
     }
 
     public function signOut()

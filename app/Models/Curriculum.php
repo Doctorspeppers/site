@@ -46,13 +46,13 @@ class Curriculum extends Model
     public function create(array $attributes = [])
     {
         $model = $this->fill($attributes);
-        if(isset($attributes['user_id'])){
-            $model->user_id = $attributes['user_id'];
+        if(isset($attributes['created_by'])){
+            $model->created_by = $attributes['created_by'];
 
             return $model;
         }
 
-        $model->user_id = auth()->user()->id;
+        $model->created_by = auth()->user()->id;
 
         return $model;
     }

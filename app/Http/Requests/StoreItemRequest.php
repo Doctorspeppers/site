@@ -13,7 +13,7 @@ class StoreItemRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->route('curriculum')->user_id == auth()->user()->id || auth()->user()->is_admin;
+        return $this->route('curriculum')->created_by == auth()->user()->id || auth()->user()->is_admin;
     }
 
     /**

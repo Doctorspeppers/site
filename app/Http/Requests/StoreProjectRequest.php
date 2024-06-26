@@ -14,7 +14,7 @@ class StoreProjectRequest extends FormRequest
     public function authorize(): bool
     {
         if($this->route('curriculum')) {
-            return $this->route('curriculum')->user_id == auth()->user()->id || auth()->user()->is_admin;
+            return $this->route('curriculum')->created_by == auth()->user()->id || auth()->user()->is_admin;
         }
         if($this->route('project')) {
             return $this->route('project')->created_by == auth()->user()->id || auth()->user()->is_admin;

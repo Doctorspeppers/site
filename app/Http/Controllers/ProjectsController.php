@@ -31,6 +31,16 @@ class ProjectsController extends Controller
         return view('project.edit', ['project' => $project]);
     }
 
+    public function attach(AlterProjectEntity $request, Project $project){
+        if(auth()->user()->is_admin){
+            $curriculums = Curriculum::all();
+            return view('project.attach', ['project' => $project, 'curriculums' => $curriculums]);
+        }
+
+        $curriculums = Curriculum::where('created_by', auth()->user()->id)->get();
+        return view('project.attach', ['project' => $project, 'curriculums' => $curriculums]);
+    }
+
     public function store(StoreProjectRequest $request, Project|null $project = null)
     {
         if ($project) {

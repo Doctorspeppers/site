@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Michelf\Markdown;
 
 class Project extends Model
 {
@@ -48,6 +49,11 @@ class Project extends Model
 
     public function getformatedDatesAttribute(): string{
         return (isset($this->dates['init']) ? $this->dates['init']->format($this->dates['format']) : '') . ' - ' . (isset($this->dates['end']) ? $this->dates['end']->format($this->dates['format']) : '');
+    }
+
+    public function getMarkdownTextAttribute(): string
+    {
+        return Markdown::defaultTransform($this->text);
     }
 
     public function createdBy(): BelongsTo

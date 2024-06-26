@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('curriculums', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('created_by');
             $table->text('subtitle');
             $table->longText('resume');
             $table->text('skills');
@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('created_by')->references('id')->on('users');
         });
     }
 
