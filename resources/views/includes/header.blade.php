@@ -37,7 +37,7 @@
         <img class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" src='/storage/images/chili-pepper-svgrepo-com.svg' alt="Chili Pepper" />
     </div>
     @if (Route::has('login'))
-        <nav class="-mx-3 flex flex-1 justify-end">
+        <nav class="-mx-3 flex flex-1 justify-end hidden lg:block">
             @auth
 
             @else
