@@ -24,6 +24,10 @@ class DayliNewsUpdate extends Command
      */
     protected $description = 'Command description';
 
+    public function __invoke(): void {
+        $this->handle();
+    }
+
     /**
      * Execute the console command.
      */

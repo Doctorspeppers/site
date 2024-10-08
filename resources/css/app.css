@@ -1241,7 +1241,7 @@
     max-width: 1600vh;
     display: inline-block;
     position: relative;
-    animation: passText 80s linear infinite;
+    animation: passText 95s linear infinite;
 }
 
 @keyframes passText {
