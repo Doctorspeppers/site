@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurriculumController;
 use App\Http\Controllers\InteractionController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\UserController;
@@ -15,6 +16,10 @@ Route::get('/', function () {
 Route::get('/projetos', function () {
     return view('projetos');
 })->name('projetos');
+
+Route::get("/news", [NewsController::class, 'index'])->name('news');
+
+Route::get("/news/{news}", [NewsController::class, 'show'])->name('news.show');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');

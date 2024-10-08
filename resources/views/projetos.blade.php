@@ -377,4 +377,4 @@
 
         </div>
     <!-- Projetos End -->
-    @stop
+    @endsection
