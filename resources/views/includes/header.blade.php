@@ -3,7 +3,7 @@
     @auth
     <nav class="-mx-3 flex flex-1 justify-start">
         <button  @click="open = ! open" class="text-white bg-blue-700 hover:bg-red-600 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 124 124" xml:space="preserve">
+            <svg fill="#F5F5F5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 124 124" xml:space="preserve">
                 <g>
                     <path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
                     <path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
@@ -59,6 +59,7 @@
             @endauth
         </nav>
     @endif
+
 </header>
 @auth
 
@@ -70,7 +71,7 @@
         x-transition:enter.opacity.50
         x-transition:leave.opacity.50
 
-        id="menu" class="fixed hidden top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto bg-gray-50 dark:bg-zinc-900" tabindex="-1" aria-labelledby="drawer-navigation-label">
+        id="menu" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto bg-gray-50 dark:bg-zinc-900" tabindex="-1" aria-labelledby="drawer-navigation-label">
             <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
             <button @click="open = ! open" type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>

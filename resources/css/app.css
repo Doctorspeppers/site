@@ -1233,3 +1233,39 @@
   .markdown-body>*:first-child>.heading-element:first-child {
     margin-top: 0 !important;
   }
+
+
+.passing {
+    width: 500%;
+    max-width: 1600vh;
+    display: inline-block;
+    position: relative;
+    animation: passText 80s linear infinite;
+}
+
+@keyframes passText {
+    0% {
+        transform: translateX(20%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+body {
+    margin: 0;
+  }
+
+.container-news {
+    line-height: initial;
+}
+
+
+.icon-pepper-white {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background-image: url('/storage/images/chili-pepper-white.svg');
+    background-repeat: no-repeat;
+    background-position: -18px 0px;
+  }

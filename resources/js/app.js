@@ -6,9 +6,7 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 
 
-window.onload = function(e){
-    document.getElementById('menu').classList.remove('hidden');
-}
+    
 
 window.browserUtils = {
     emit: function(message) {
