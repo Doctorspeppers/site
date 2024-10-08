@@ -47,7 +47,7 @@ class DayliNewsUpdate extends Command
 
         $client = new \GuzzleHttp\Client();
         for ($i=0; $i < 10; $i++) {
-            $response = json_decode($client->request('GET', 'http://127.0.0.1:5000/news/'.$integration->aggregator."/".$i)->getBody(), true);
+            $response = json_decode($client->request('GET',  env("SCRAPPER_URL", "https://localhost:5000").'/news/'.$integration->aggregator."/".$i)->getBody(), true);
             foreach ($response  as $key => $news) {
                 try{
                     unset($news['cves']);
@@ -71,7 +71,7 @@ class DayliNewsUpdate extends Command
     public function aggregatorsRequest(){
 
         $client = new \GuzzleHttp\Client();
-        $response = json_decode($client->request('GET', 'http://127.0.0.1:5000/aggregators')->getBody(), true);
+        $response = json_decode($client->request('GET', env("SCRAPPER_URL", "https://localhost:5000").'/aggregators')->getBody(), true);
 
         foreach ($response['aggregators']  as $key => $aggregator) {
             try{
