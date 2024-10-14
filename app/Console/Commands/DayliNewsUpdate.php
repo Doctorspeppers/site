@@ -51,21 +51,21 @@ class DayliNewsUpdate extends Command
 
         $client = new \GuzzleHttp\Client();
         for ($i=0; $i < 10; $i++) {
-            $response = json_decode($client->request('GET',  env("SCRAPPER_URL", "https://localhost:5000").'/news/'.$integration->aggregator."/".$i)->getBody(), true);
-            foreach ($response  as $key => $news) {
-                try{
-                    unset($news['cves']);
-                    $newNews = News::firstOrNew($news);
+            try{
 
-                    if($newNews->date == Carbon::today()){
-                        $newNews->highlighted = 1;
-                    }
-                    $newNews->newsIntegration()->associate($integration->id)->save();
-                    $newNews->save();
+                $response = json_decode($client->request('GET',  env("SCRAPPER_URL", "https://localhost:5000").'/news/'.$integration->aggregator."/".$i)->getBody(), true);
+                foreach ($response  as $key => $news) {
+                        unset($news['cves']);
+                        $newNews = News::firstOrNew($news);
 
-                } catch (\Exception $exception){
-                    Log::error($exception);
+                        if($newNews->date == Carbon::today()){
+                            $newNews->highlighted = 1;
+                        }
+                        $newNews->newsIntegration()->associate($integration->id)->save();
+                        $newNews->save();
                 }
+            } catch (\Exception $exception){
+                Log::error($exception);
             }
         }
 
