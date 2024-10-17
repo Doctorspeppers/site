@@ -52,7 +52,6 @@ class DayliNewsUpdate extends Command
         $client = new \GuzzleHttp\Client();
         for ($i=0; $i < 10; $i++) {
             try{
-
                 $response = json_decode($client->request('GET',  env("SCRAPPER_URL", "https://localhost:5000").'/news/'.$integration->aggregator."/".$i)->getBody(), true);
                 foreach ($response  as $key => $news) {
                         unset($news['cves']);

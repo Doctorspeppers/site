@@ -4,9 +4,15 @@ import Swal from 'sweetalert2'
 import '@sweetalert2/themes/dark';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
-
-
-    
+import EditorJS from '@editorjs/editorjs';
+import Embed from '@editorjs/embed';
+import Underline from '@editorjs/underline';
+import NestedList from '@editorjs/nested-list';
+import marker from '@editorjs/marker';
+import quote from '@editorjs/quote';
+import CodeTool from '@editorjs/code';
+import table from '@editorjs/table';
+import header from '@editorjs/header';
 
 window.browserUtils = {
     emit: function(message) {
@@ -33,7 +39,6 @@ window.browserUtils = {
             icon: "error"
         });
     },
-
 }
 
 let formController =  {
@@ -67,16 +72,62 @@ let formController =  {
                 browserUtils.emitModalError("Erro", error.response.data.message);
             })
         },
-
-
 }
 
+
+
+let editorJSController =  {
+    editor: null,
+    init: function(inputId){
+        this.editor = new EditorJS({
+            tools: {
+                table: table,
+                code: CodeTool,
+                underline: Underline,
+                marker: marker,
+                quote: quote,
+                header: header,
+                list: {
+                    class: NestedList,
+                    inlineToolbar: true,
+                    config: {
+                      defaultStyle: 'unordered'
+                    },
+                },
+                embed: {
+                    class: Embed,
+                    config: {
+                        services: {
+                            youtube: true,
+                            coub: true,
+                            imgur: true,
+                            github: true,
+                            facebook: true,
+                            instagram: true,
+                            codepen: {
+                                regex: /https?:\/\/codepen.io\/([^\/\?\&]*)\/pen\/([^\/\?\&]*)/,
+                                embedUrl: 'https://codepen.io/<%= remote_id %>?height=300&theme-id=0&default-tab=css,result&embed-version=2',
+                                html: "<iframe height='300' scrolling='no' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>",
+                                height: 300,
+                                width: 600,
+                                id: (groups) => groups.join('/embed/')
+                            }
+                        }
+                    }
+                },
+            },
+            autofocus: true,
+            holder: inputId,
+        });
+    },
+}
 
 
 document.marked = marked
 document.DOMPurify = DOMPurify
 window.formController = formController
 window.Alpine = Alpine
-window.Swal = Swal
+document.Swal = Swal
+window.editorJSController = editorJSController
 
 Alpine.start()

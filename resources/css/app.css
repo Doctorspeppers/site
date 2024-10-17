@@ -1274,3 +1274,16 @@ body {
     background-repeat: no-repeat;
     background-position: -18px 0px;
   }
+
+  .ce-paragraph, cdx-block {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .ce-block__content,
+  .ce-toolbar__content {
+      max-width: 90%;
+      white-space: pre-wrap;
+      box-sizing: initial;
+      overflow-wrap: break-word;
+  }
