@@ -9,4 +9,5 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-Schedule::call(new DayliNewsUpdate)->daily();
+Schedule::call(new DayliNewsUpdate)->timezone('America/Boa_Vista')
+->at('5:00');

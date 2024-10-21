@@ -14,5 +14,6 @@
     <div class="markdown-body text-xl">
         {!! $news->content !!}
     </div>
+    <div>Noticia disponibilizada na integra em <a class="text-[#FF2D20]" href="{{ $news->more }}"> {{ $news->newsIntegration->aggregator }}</a></div>
 </div>
 @endsection
